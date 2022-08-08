@@ -1,3 +1,12 @@
+const MAXIMUM_NUMBER: u8 = 5;
+
+enum Direction {
+    // Up,
+    Down,
+    // Left,
+    // Right,
+}
+
 fn main() {
     // comments
     // i32
@@ -17,18 +26,42 @@ fn main() {
             break;
         }
     }
+
     println!("while");
     while x < 50 {
         x += 1;
         println!("hello {}", x);
     }
+
     println!("for");
     for y in 1..11 {
         println!("hello {}", x + y);
     }
+
     println!("interact with arrays");
     let animals: Vec<&str> = vec!["chicken", "Rabbit"];
     for (index, animal) in animals.iter().enumerate() {
         println!("{} {}", animal, index);
     }
+
+    println!("enum");
+    let player_direction: Direction = Direction::Down;
+    match player_direction {
+        // Direction::Up => println!("zucaritas Up"),
+        Direction::Down => println!("zucaritas Down"),
+        // Direction::Right => println!("zucaritas Right"),
+        // Direction::Left => println!("zucaritas Left"),
+    }
+    println!("constant");
+    for x in 1..MAXIMUM_NUMBER {
+        println!("{}", x);
+    }
+
+    println!("tuplas");
+
+    // can storage different value types
+    let tup1 = (20, 25, 30);
+    let (a, b, c) = tup1;
+
+    println!("{} {} {}", a, b, tup1.2);
 }
