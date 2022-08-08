@@ -57,11 +57,25 @@ fn main() {
         println!("{}", x);
     }
 
-    println!("tuplas");
+    println!("tuple");
 
     // can storage different value types
     let tup1 = (20, 25, 30);
-    let (a, b, c) = tup1;
+    let (a, b, _c) = tup1;
 
     println!("{} {} {}", a, b, tup1.2);
+
+    // functions
+    print_hello(2);
+
+    // references
+    // let object = 10;
+    // let reference = &x;
+}
+
+fn print_hello(mut iteration_number: i32) {
+    iteration_number += 1;
+    for _x in 1..iteration_number {
+        println!("Hello");
+    }
 }
